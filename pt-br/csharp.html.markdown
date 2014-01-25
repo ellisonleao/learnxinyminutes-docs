@@ -118,78 +118,81 @@ outros tipos de pontos flutuantes.
 			// Strings são imutáveis: Você não pode fazer algo do tipo
 			// fooString[1] = 'X';
 			
-			// PAREI AQUI!
-            // Compare strings with current culture, ignoring case
+			// Compara 2 strings com a propriedade de cultura atual, ignorando
+			// maiúsculas e minúsculas
             string.Compare(fooString, "x", StringComparison.CurrentCultureIgnoreCase);
 
-            // Formatting, based on sprintf
+			// Formatação, baseado no sprintf
             string fooFs = string.Format("Check Check, {0} {1}, {0} {1:0.0}", 1, 2);
 
-            // Dates & Formatting
+			// Datas e Formatações
             DateTime fooDate = DateTime.Now;
             Console.WriteLine(fooDate.ToString("hh:mm, dd MMM yyyy"));
 
             // You can split a string over two lines with the @ symbol. To escape " use ""
+			// Você pode dividir uma string em 2 linhas com o símbolo @. Para
+			// escapar aspas duplas (") utilize "" 
             string bazString = @"Here's some stuff
 on a new line! ""Wow!"", the masses cried";
 
-            // Use const or read-only to make a variable immutable
-            // const values are calculated at compile time
+			// Utilize const ou readonly para tornar uma variável imutável
+			// valores const são calculados em tempos de compilação
             const int HOURS_I_WORK_PER_WEEK = 9001;
 
             ///////////////////////////////////////////////////
-            // Data Structures
+            // Estrutura de dados 
             ///////////////////////////////////////////////////
 
-            // Arrays - zero indexed
-            // The array size must be decided upon declaration
-            // The format for declaring an array is follows:
-            // <datatype>[] <var name> = new <datatype>[<array size>];
+            // Arrays - indexados numericamente começando do 0 
+            // O tamanho do array precisa ser explícito na criação 
+			// O formato para declarar um array segue a seguinte ordem:
+            // <tipo>[] <nome da variavel> = new <tipo>[<tamanho>];
             int[] intArray = new int[10];
 
-            // Another way to declare & initialize an array
+			// Outra forma de declarar e inicializar um array
             int[] y = { 9000, 1000, 1337 };
 
-            // Indexing an array - Accessing an element
+			// Acessando um elemento do array
             Console.WriteLine("intArray @ 0: " + intArray[0]);
-            // Arrays are mutable.
+			// Arrays são mutáveis
             intArray[1] = 1;
 
-            // Lists
-            // Lists are used more frequently than arrays as they are more flexible
-            // The format for declaring a list is follows:
-            // List<datatype> <var name> = new List<datatype>();
+            // Listas
+			// Listas são usados mais frequentemente do que arrays pelo fato de
+			// serem mais flexíveis.
+			// O formato para declarar uma lista segue a seguinte ordem:
+            // List<tipo> <nome da variavel> = new List<tipo>();
             List<int> intList = new List<int>();
             List<string> stringList = new List<string>();
-            List<int> z = new List<int> { 9000, 1000, 1337 }; // intialize
-            // The <> are for generics - Check out the cool stuff section
+            List<int> z = new List<int> { 9000, 1000, 1337 }; // inicializando
+			// Os <> são para genéricos - Veja a seção Coisas Legais
 
-            // Lists don't default to a value;
-            // A value must be added before accessing the index
+			// Listas não possuem valor padrão;
+			// Um valor precisa ser adicionado antes de acessar seu índice
             intList.Add(1);
             Console.WriteLine("intList @ 0: " + intList[0]);
 
-            // Others data structures to check out:
+			// Outros tipos da dados que valem a pena ver:
             // Stack/Queue
-            // Dictionary (an implementation of a hash map)
+            // Dictionary (implementação de um hash map)
             // HashSet
-            // Read-only Collections
+            // Collections somente leitura
             // Tuple (.Net 4+)
 
             ///////////////////////////////////////
-            // Operators
+            // Operadores
             ///////////////////////////////////////
-            Console.WriteLine("\n->Operators");
+            Console.WriteLine("\n->Operadores");
 
-            int i1 = 1, i2 = 2; // Shorthand for multiple declarations
+            int i1 = 1, i2 = 2; // Atalho para declarações múltiplas 
 
-            // Arithmetic is straightforward
+            // Aritmética é simples
             Console.WriteLine(i1 + i2 - i1 * 3 / 7); //
 
-            // Modulo
+            // Módulo
             Console.WriteLine("11%3 = " + (11 % 3)); // => 2
 
-            // Comparison operators
+            // Operadores de comparação 
             Console.WriteLine("3 == 2? " + (3 == 2)); // => false
             Console.WriteLine("3 != 2? " + (3 != 2)); // => true
             Console.WriteLine("3 > 2? " + (3 > 2)); // => true
@@ -197,7 +200,8 @@ on a new line! ""Wow!"", the masses cried";
             Console.WriteLine("2 <= 2? " + (2 <= 2)); // => true
             Console.WriteLine("2 >= 2? " + (2 >= 2)); // => true
 
-            // Bitwise operators!
+            // Operadores de bit
+			//TODO: Traduzir 
             /*
             ~       Unary bitwise complement
             <<      Signed left shift
@@ -207,72 +211,76 @@ on a new line! ""Wow!"", the masses cried";
             |       Bitwise inclusive OR
             */
 
-            // Incrementations
-            int i = 0;
+            // Incrementadores 
+			int i = 0;
             Console.WriteLine("\n->Inc/Dec-rementation");
-            Console.WriteLine(i++); //i = 1. Post-Incrementation
-            Console.WriteLine(++i); //i = 2. Pre-Incrementation
-            Console.WriteLine(i--); //i = 1. Post-Decrementation
-            Console.WriteLine(--i); //i = 0. Pre-Decrementation
+            Console.WriteLine(i++); //i = 1. Pós-incrementação 
+            Console.WriteLine(++i); //i = 2. Pré-Incrementação
+            Console.WriteLine(i--); //i = 1. Pós-Decremento
+			Console.WriteLine(--i); //i = 0. Pré-Decremento
 
             ///////////////////////////////////////
-            // Control Structures
+            // Estruturas de Controle 
             ///////////////////////////////////////
-            Console.WriteLine("\n->Control Structures");
+            Console.WriteLine("\n-> Estruturas de Controle ");
 
-            // If statements are c-like
+			// Declarações If são semelhantes a linguagem C
             int j = 10;
             if (j == 10)
             {
-                Console.WriteLine("I get printed");
+                Console.WriteLine("Eu apareco");
             }
             else if (j > 10)
             {
-                Console.WriteLine("I don't");
+                Console.WriteLine("Eu nao");
             }
             else
             {
-                Console.WriteLine("I also don't");
+                Console.WriteLine("Eu também nao");
             }
 
-            // Ternary operators
-            // A simple if/else can be written as follows
-            // <condition> ? <true> : <false>
+            // Operadores ternários
+            // Um simples if/else pode ser escrito da seguinte forma 
+            // <condição> ? <true> : <false>
             string isTrue = (true) ? "True" : "False";
 
-            // While loop
-            int fooWhile = 0;
+            // Loop While 
+			int fooWhile = 0;
             while (fooWhile < 100)
             {
-                //Iterated 100 times, fooWhile 0->99
+                //Itera 100x, fooWhile 0->99
                 fooWhile++;
             }
 
-            // Do While Loop
+            // Loop Do While
             int fooDoWhile = 0;
             do
             {
-                //Iterated 99 times, fooDoWhile 0->99
+                //Itera 99x, fooDoWhile 0->99
                 fooDoWhile++;
             } while (fooDoWhile < 100);
 
-            //for loop structure => for(<start_statement>; <conditional>; <step>)
+            // estrutura de um loop for:
+			// for(<condicao_inicial>; <condicional>; <passo>)
             for (int fooFor = 0; fooFor < 10; fooFor++)
             {
-                //Iterated 10 times, fooFor 0->9
+                //Itera 10x, fooFor 0->9
             }
 
-            // For Each Loop
-            // foreach loop structure => foreach(<iteratorType> <iteratorName> in <enumerable>)
-            // The foreach loop loops over any object implementing IEnumerable or IEnumerable<T>
-            // All the collection types (Array, List, Dictionary...) in the .Net framework
-            // implement one or both of these interfaces.
-            // (The ToCharArray() could be removed, because a string also implements IEnumerable)
+            // Loop For Each
+            // estrutura de um loop foreach
+			// foreach(<tipoIterador> <nomeIterador> in <iterável>)
+			// O loop for each cria um loop em qualquer objeto que implementa
+			// as interfaces IEnumerable ou IEnumerable<T>
+			// Todas as estruturas de dados (Array, List, Dictionary, ..) no
+			// framework .NET implementa algumas dessas interfaces
+			// (A função ToCharArray() pode ser removida, porque uma string
+			// também implementa IEnumerable)
             foreach (char character in "Hello World".ToCharArray())
             {
-                //Iterated over all the characters in the string
+                //Itera sobre todos os caracteres da string
             }
-
+			//PAREI AQUI
             // Switch Case
             // A switch works with the byte, short, char, and int data types.
             // It also works with enumerated types (discussed in Enum Types),
