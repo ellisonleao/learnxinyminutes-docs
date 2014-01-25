@@ -5,7 +5,7 @@ contributors:
 filename: javascript.js
 ---
 
-Javascript was created by Netscape's Brendan Eich in 1995. It was originally
+JavaScript was created by Netscape's Brendan Eich in 1995. It was originally
 intended as a simpler scripting language for websites, complimenting the use of
 Java for more complex web applications, but its tight integration with Web pages
 and built-in support in browsers has caused it to become far more common than
@@ -37,7 +37,7 @@ doStuff()
 ///////////////////////////////////
 // 1. Numbers, Strings and Operators
 
-// Javascript has one number type (which is a 64-bit IEEE 754 double).
+// JavaScript has one number type (which is a 64-bit IEEE 754 double).
 // As with Lua, don't freak out about the lack of ints: doubles have a 52-bit
 // mantissa, which is enough to store integers up to about 9✕10¹⁵ precisely.
 3; // = 3
@@ -116,7 +116,7 @@ undefined; // used to indicate a value is not currently present (although
 ///////////////////////////////////
 // 2. Variables, Arrays and Objects
 
-// Variables are declared with the var keyword. Javascript is dynamically typed,
+// Variables are declared with the var keyword. JavaScript is dynamically typed,
 // so you don't need to specify type. Assignment uses a single = character.
 var someVar = 5;
 
@@ -175,14 +175,14 @@ myObj.myFourthKey; // = undefined
 var count = 1;
 if (count == 3){
     // evaluated if count is 3
-} else if (count == 4) {
+} else if (count == 4){
     // evaluated if count is 4
 } else {
     // evaluated if it's not either 3 or 4
 }
 
 // As does while.
-while (true) {
+while (true){
     // An infinite loop!
 }
 
@@ -327,7 +327,7 @@ var anotherFunc = function(s){
 }
 anotherFunc.call(myObj, " And Hello Moon!"); // = "Hello World! And Hello Moon!"
 
-// The 'apply' function is nearly identical, but takes an array for an argument list. 
+// The 'apply' function is nearly identical, but takes an array for an argument list.
 
 anotherFunc.apply(myObj, [" And Hello Sun!"]); // = "Hello World! And Hello Sun!"
 
@@ -477,7 +477,7 @@ more about how to use JavaScript in web pages, start by learning about the
 [Document Object
 Model](https://developer.mozilla.org/en-US/docs/Using_the_W3C_DOM_Level_1_Core)
 
-[Javascript Garden](http://bonsaiden.github.io/JavaScript-Garden/) is an in-depth
+[JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) is an in-depth
 guide of all the counter-intuitive parts of the language.
 
 In addition to direct contributors to this article, some content is adapted
